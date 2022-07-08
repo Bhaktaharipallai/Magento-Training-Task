@@ -21,4 +21,10 @@ interface BhaktahariEntityRepositoryInterface
      */
     public function getCollection();
 
+    /**
+     * Get MultiData
+     *
+     * @return mixed
+     */
+    public function getMultiData();
 }

@@ -78,15 +78,8 @@ class Index implements ActionInterface
             return $resultJson;
         } else {
             $result = $this->entityRepository->getById($entityId);
-            $connection  = $this->resourceConnection->getConnection();
-            $tableName = $connection->getTableName('bhaktahari_entity');
-            $query = $connection->select()
-                ->from($tableName)
-                ->where('entity_id IN (?)', [9,10]);
-
-            $fetchData = $connection-> fetchAll($query);
-            echo "<pre>";
-             var_dump($fetchData);
+            //$multiData = $this->entityRepository->getMultiData();
+            //var_dump($multiData);
             //$manualResult = $this->entityRepository->getById(6);
             if (empty($result)) {
                 throw new NoSuchEntityException(__('There is no records with this id.'));

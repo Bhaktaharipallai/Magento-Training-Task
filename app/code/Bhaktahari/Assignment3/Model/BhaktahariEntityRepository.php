@@ -62,9 +62,9 @@ class BhaktahariEntityRepository implements BhaktahariEntityRepositoryInterface
 //        $this->resourceModel->load($entity, $entityId);
 //        return $entity;
         $connection  = $this->resourceConnection->getConnection();
-       // $tableName = $connection->getTableName('bhaktahari_entity');
+        $tableName = $connection->getTableName('bhaktahari_entity');
         $query = $connection->select()
-            ->from(['entity' => 'bhaktahari_entity'])
+            ->from(['entity' => $tableName])
             ->join(
                 ['address' => 'bhaktahari_address'],
                 'entity.entity_id = address.entity_id'
@@ -83,5 +83,17 @@ class BhaktahariEntityRepository implements BhaktahariEntityRepositoryInterface
     public function getCollection()
     {
         return $bhaktahariCollection = $this->collection->load();
+    }
+
+    public function getMultiData()
+    {
+        $connection  = $this->resourceConnection->getConnection();
+        $tableName = $connection->getTableName('bhaktahari_entity');
+        $query = $connection->select()
+            ->from($tableName)
+            ->where('entity_id IN (?)', [9,10]);
+
+        $fetchData = $connection-> fetchAll($query);
+        return $fetchData;
     }
 }
