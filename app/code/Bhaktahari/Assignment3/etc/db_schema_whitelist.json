@@ -1,0 +1,15 @@
+{
+    "bhaktahari_entity": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "age": true,
+            "company": true,
+            "height": true,
+            "Company timing": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

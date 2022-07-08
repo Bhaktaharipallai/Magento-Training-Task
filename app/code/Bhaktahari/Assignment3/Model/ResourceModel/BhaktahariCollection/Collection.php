@@ -2,8 +2,8 @@
 namespace Bhaktahari\Assignment3\Model\ResourceModel\BhaktahariCollection;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-use Bhaktahari\Assignment3\Model\ResourceModel as Model;
-use Bhaktahari\Assignment3\Model\ResourceModel\BhaktahariCollection as ResourceModel;
+use Bhaktahari\Assignment3\Model\BhaktahariEntity as Model;
+use Bhaktahari\Assignment3\Model\ResourceModel\BhaktahariEntity as ResourceModel;
 
 class Collection extends AbstractCollection
 {
