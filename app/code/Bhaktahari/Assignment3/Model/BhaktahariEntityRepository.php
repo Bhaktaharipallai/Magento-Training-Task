@@ -35,7 +35,9 @@ class BhaktahariEntityRepository implements BhaktahariEntityRepositoryInterface
      * BhaktahariEntityRepository constructor.
      * @param ResourceModel $resourceModel
      * @param \Bhaktahari\Assignment3\Model\BhaktahariEntityFactory $entityFactory
+     * @param BhaktahariEntity $bhaktahariModel
      * @param Collection $collection
+     * @param ResourceConnection $connection
      */
     public function __construct(
         ResourceModel $resourceModel,
@@ -53,26 +55,27 @@ class BhaktahariEntityRepository implements BhaktahariEntityRepositoryInterface
 
     /**
      * @param string $entityId
-     * @return array
+     * @return  \Bhaktahari\Assignment3\Api\Data\BhaktahariEntityInterface;
      */
     public function getById($entityId)
     {
-        //$entity = $this->bhaktahariModel;
-//        $entity = $this->entityFactory->create();
-//        $this->resourceModel->load($entity, $entityId);
-//        return $entity;
-        $connection  = $this->resourceConnection->getConnection();
-        $tableName = $connection->getTableName('bhaktahari_entity');
-        $query = $connection->select()
-            ->from(['entity' => $tableName])
-            ->join(
-                ['address' => 'bhaktahari_address'],
-                'entity.entity_id = address.entity_id'
-            )
-            ->where('entity.entity_id = ?', $entityId);
-        $fetchData = $connection-> fetchAll($query);
 
-        return $fetchData;
+        //$entity = $this->bhaktahariModel;
+        $entity = $this->entityFactory->create();
+        $this->resourceModel->load($entity, $entityId);
+        return $entity;
+//        $connection  = $this->resourceConnection->getConnection();
+//        $tableName = $connection->getTableName('bhaktahari_entity');
+//        $query = $connection->select()
+//            ->from(['entity' => $tableName])
+//            ->join(
+//                ['address' => 'bhaktahari_address'],
+//                'entity.entity_id = address.entity_id'
+//            )
+//            ->where('entity.entity_id = ?', $entityId);
+//        $fetchData = $connection-> fetchAll($query);
+//
+//        return $fetchData;
     }
 
     /**

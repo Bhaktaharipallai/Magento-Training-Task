@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Bhaktahari\Assignment3\Api\Data\BhaktahariEntityInterface" type="Bhaktahari\Assignment3\Model\BhaktahariEntity" />
+    <preference for="Bhaktahari\Assignment3\Api\BhaktahariEntityRepositoryInterface" type="Bhaktahari\Assignment3\Model\BhaktahariEntityRepository" />
+    <preference for="Bhaktahari\Assignment3\Api\CustomAddressRepositoryInterface" type="Bhaktahari\Assignment3\Model\CustomAddressEntityRepository" />
+    <type name="Bhaktahari\Assignment3\Api\BhaktahariEntityRepositoryInterface">
+        <plugin name="add_extension_attribute_Custom_entity" type="Bhaktahari\Assignment3\Plugin\AfterGetId"/>
+    </type>
+    <type name="Bhaktahari\Assignment3\Api\CustomAddressRepositoryInterface">
+        <plugin name="add_extension_attribute_Custom_Address_entity" type="Bhaktahari\Assignment3\Plugin\AfterGetAddressId"/>
+    </type>
+</config>

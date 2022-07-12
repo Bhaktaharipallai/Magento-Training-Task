@@ -3,10 +3,11 @@
 namespace Bhaktahari\Assignment3\Model;
 
 use Bhaktahari\Assignment3\Api\Data\BhaktahariEntityInterface;
-use Magento\Framework\Model\AbstractModel;
+use Magento\Framework\Api\ExtensionAttributesInterface;
+use Magento\Framework\Model\AbstractExtensibleModel;
 use Bhaktahari\Assignment3\Model\ResourceModel\BhaktahariEntity as ResourceModel;
 
-class BhaktahariEntity extends AbstractModel implements BhaktahariEntityInterface
+class BhaktahariEntity extends AbstractExtensibleModel implements BhaktahariEntityInterface
 {
     /**
      * @inheritdoc
@@ -63,5 +64,23 @@ class BhaktahariEntity extends AbstractModel implements BhaktahariEntityInterfac
     public function getCompanyTiming()
     {
         return $this->getData(self::COMPANYTIMING);
+    }
+    /**
+     * @return ExtensionAttributesInterface
+     */
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+
+    /**
+     * @param BhaktahariEntityExtensionInterface $extensionAttributes
+     * @return BhaktahariEntity
+     */
+    public function setExtensionAttributes(
+        BhaktahariEntityExtensionInterface|
+        \Bhaktahari\Assignment3\Api\Data\BhaktahariEntityExtensionInterface $extensionAttributes
+    ) {
+        return $this->_setExtensionAttributes($extensionAttributes);
     }
 }

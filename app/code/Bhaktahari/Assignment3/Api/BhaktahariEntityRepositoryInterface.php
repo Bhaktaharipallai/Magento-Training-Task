@@ -10,7 +10,7 @@ interface BhaktahariEntityRepositoryInterface
      * Get entit by Id
      *
      * @param string $entityId
-     * @return BhaktahariEntity
+     * @return \Bhaktahari\Assignment3\Api\Data\BhaktahariEntityInterface;
      */
     public function getById($entityId);
 
