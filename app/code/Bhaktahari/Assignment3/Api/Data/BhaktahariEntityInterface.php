@@ -27,12 +27,27 @@ interface BhaktahariEntityInterface extends ExtensibleDataInterface
     public function getName();
 
     /**
+     * set Name
+     *
+     * @param string name
+     * @return $this
+     */
+    public function setName($name);
+
+    /**
      * Get Age
      *
      * @return int
      */
     public function getAge();
 
+    /**
+     * set Age
+     *
+     * @param int $age
+     * @return int
+     */
+    public function setAge($age);
     /**
      * Get Company Name
      *
@@ -41,6 +56,13 @@ interface BhaktahariEntityInterface extends ExtensibleDataInterface
     public function getCompany();
 
     /**
+     * set Company Name
+     *
+     * @param string $company
+     * @return string
+     */
+    public function setCompany($company);
+    /**
      * Get Height
      *
      * @return float
@@ -48,11 +70,26 @@ interface BhaktahariEntityInterface extends ExtensibleDataInterface
     public function getHeighth();
 
     /**
+     * Set Height
+     *
+     * @param $height
+     * @return mixed
+     */
+    public function setHeight($height);
+    /**
      * Get Company Timing
      *
      * @return string
      */
     public function getCompanyTiming();
+
+    /**
+     * Set CompanyTiming
+     *
+     * @param $companyTiming
+     * @return mixed
+     */
+    public function setCompanyTiming($companyTiming);
     /**
      * @return \Bhaktahari\Assignment3\Api\Data\BhaktahariEntityExtensionInterface|null
      */

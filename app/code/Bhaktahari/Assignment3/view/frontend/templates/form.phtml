@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Bhaktahari\Assignment3\Block\Display$block */
+$entity = $block->getEntity();
+?>
+<h2>Entity Form</h2>
+<form action="<?= $block->getActionUrl() ?>" method="post">
+    <label for="name">Entity Name:</label><br>
+    <input type="text" id="name" name="name" value="<?= !empty($entity) ? $entity->getName() : ''?>"><br>
+
+    <label for="age">Entity Age:</label><br>
+    <input type="text" id="age" name="age" value="<?= !empty($entity) ? $entity->getAge() : ''?>"><br>
+
+    <label for="company">Entity Company:</label><br>
+    <input type="text" id="company" name="company" value="<?= !empty($entity) ? $entity->getCompany() : ''?>"><br>
+
+    <label for="company">Entity Height:</label><br>
+    <input type="text" id="height" name="height" value="<?= !empty($entity) ? $entity->getHeighth() : ''?>"><br>
+
+    <label for="Company timing">Entity Company Timing:</label><br>
+    <input type="text" id="company_timing" name="company_timing" value="<?= !empty($entity) ? $entity->getCompanyTiming() : ''?>"><br>
+    <input type="hidden" name ="id" value="<?= $block->getRequest()->getParam('id') ?>">
+    <input type="submit" value="Submit">
+</form>
+

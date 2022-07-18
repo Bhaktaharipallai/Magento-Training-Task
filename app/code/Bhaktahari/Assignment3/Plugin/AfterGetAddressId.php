@@ -43,12 +43,11 @@ class AfterGetAddressId
      * @param \Bhaktahari\Assignment3\Api\Data\CustomAddressEntityInterface $result
      * @return \Bhaktahari\Assignment3\Api\Data\CustomAddressEntityInterface
      */
-    public function afterGetAddressById(
+    public function afterGetById(
         \Bhaktahari\Assignment3\Api\CustomAddressRepositoryInterface $subject,
         \Bhaktahari\Assignment3\Api\Data\CustomAddressEntityInterface $result
     ) {
         $entityId = $result->getEntityId();
-        $extensionAttributes = '';
         if ($result->getExtensionAttributes()) {
             $extensionAttributes = $result->getExtensionAttributes();
         } else {

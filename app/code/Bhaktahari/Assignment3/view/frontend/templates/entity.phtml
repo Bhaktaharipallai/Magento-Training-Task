@@ -1,0 +1,25 @@
+<?php
+/** @var \Bhaktahari\Assignment3\Block\Display $block */
+  $entites = $block->getEntities()->getItems();
+?>
+<table>
+    <tr>
+        <th>Entity Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Company</th>
+        <th>Height</th>
+        <th>Company Timing</th>
+    </tr>
+<?php foreach ($entites as $entity)  {?>
+ <tr>
+     <td><?= $entity->getId()?></td>
+     <td><?= $entity->getName()?></td>
+     <td><?= $entity->getAge()?></td>
+     <td><?= $entity->getCompany()?></td>
+     <td><?= $entity->getHeighth()?></td>
+     <td><?= $entity->getCompanyTiming()?></td>
+     <td> <a href="<?= $block->getFormUrl();echo 'id/'.$entity->getId()?>">Edit</a></td>
+ </tr>
+<?php } ?>
+</table>

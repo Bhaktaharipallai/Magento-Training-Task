@@ -39,7 +39,6 @@ class AfterGetId
         \Bhaktahari\Assignment3\Api\Data\BhaktahariEntityInterface $result
     ) {
         $id = $result->getId();
-        $extensionAttributes = '';
         if ($result->getExtensionAttributes()) {
             $extensionAttributes =  $result->getExtensionAttributes();
         } else {

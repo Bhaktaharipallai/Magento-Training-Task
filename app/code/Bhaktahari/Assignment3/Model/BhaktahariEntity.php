@@ -27,6 +27,16 @@ class BhaktahariEntity extends AbstractExtensibleModel implements BhaktahariEnti
         return $this->getData(self::NAME);
     }
     /**
+     * Set Name
+     *
+     * @param string $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        return $this->setData(self::NAME, $name);
+    }
+    /**
      * Get Age
      *
      * @return int
@@ -34,6 +44,17 @@ class BhaktahariEntity extends AbstractExtensibleModel implements BhaktahariEnti
     public function getAge()
     {
         return $this->getData(self::AGE);
+    }
+
+    /**
+     * Set Age
+     *
+     * @param int $age
+     * @return $this
+     */
+    public function setAge($age)
+    {
+        return $this->setData(self::AGE, $age);
     }
 
     /**
@@ -47,6 +68,15 @@ class BhaktahariEntity extends AbstractExtensibleModel implements BhaktahariEnti
     }
 
     /**
+     * @param string $company
+     * @return BhaktahariEntity|string
+     */
+    public function setCompany($company)
+    {
+        return $this->setData(self::COMPANY, $company);
+    }
+
+    /**
      * Get Height
      *
      * @return float
@@ -54,6 +84,15 @@ class BhaktahariEntity extends AbstractExtensibleModel implements BhaktahariEnti
     public function getHeighth()
     {
          return $this->getData(self::HEIGHT);
+    }
+
+    /**
+     * @param $height
+     * @return BhaktahariEntity|mixed
+     */
+    public function setHeight($height)
+    {
+         return $this->setData(self::HEIGHT, $height);
     }
 
     /**
@@ -65,6 +104,16 @@ class BhaktahariEntity extends AbstractExtensibleModel implements BhaktahariEnti
     {
         return $this->getData(self::COMPANYTIMING);
     }
+
+    /**
+     * @param $companyTiming
+     * @return BhaktahariEntity|mixed
+     */
+    public function setCompanyTiming($companyTiming)
+    {
+        return $this->setData(self::COMPANYTIMING, $companyTiming);
+    }
+
     /**
      * @return ExtensionAttributesInterface
      */

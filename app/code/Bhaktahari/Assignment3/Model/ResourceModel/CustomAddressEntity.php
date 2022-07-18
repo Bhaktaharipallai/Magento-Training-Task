@@ -9,6 +9,6 @@ class CustomAddressEntity extends AbstractDb
 {
     protected function _construct(): void
     {
-        $this->_init('bhaktahari_address', 'entity_id');
+        $this->_init('bhaktahari_address', 'address_id');
     }
 }

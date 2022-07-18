@@ -8,9 +8,9 @@
         </resources>
     </route>
     <route url="/V1/Custom/Address/:addressId" method="GET">
-        <service class="Bhaktahari\Assignment3\Api\CustomAddressRepositoryInterface" method="getAddressById"/>
-        <resources>
-            <resource ref="anonymous"/>
-        </resources>
+        <service class="Bhaktahari\Assignment3\Api\CustomAddressRepositoryInterface" method="getById"/>
+            <resources>
+                <resource ref="anonymous"/>
+            </resources>
     </route>
 </routes>
