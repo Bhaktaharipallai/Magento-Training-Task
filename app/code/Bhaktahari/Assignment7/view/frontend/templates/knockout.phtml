@@ -1,0 +1,19 @@
+<div id="custom-component" data-bind="scope:'customcomponent'">
+    Enter the First number :<label for="first"></label><input data-bind="value :first" id="first"><br>
+    Enter the Second number:<label for="second"></label><input data-bind="value: second" id="second"><br>
+    <button data-bind="click: addEvent">Add</button><br><br>
+    Result:<strong data-bind="value: answer"></strong><label for="answer"></label><input id="answer" data-bind="value :result" disabled>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*" : {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "customcomponent": {
+                        "component": "Bhaktahari_Assignment7/js/knockout"
+                    }
+                }
+            }
+        }
+    }
+</script>
